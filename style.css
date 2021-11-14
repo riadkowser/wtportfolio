@@ -1,0 +1,369 @@
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+*{
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.7rem;
+    text-align: right;
+}
+a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+p{
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+
+[class*="col-"]{
+    float: left;
+    padding: 10px;
+}
+
+/* navbar */
+
+.navbar{
+    background-color: #392ce4;
+    padding: 1% 7%;
+    text-align: center;
+}
+
+.navbar-menu{
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.navbar-menu a{
+    background-color: #0c6168;
+    border-radius: 10px;    
+    text-align: left;
+    padding: 5px 10px;
+    margin: 10px 0px;
+    background-color: transparent;
+}
+
+.navbar-menu a:hover{
+    background-color: gray;
+}
+
+
+.navbar::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+/* about me */
+
+
+.about-me{
+    background-color: #456ef5;
+    padding: 1% 7%;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.aboutme-image{
+    margin-top: 0px;
+}
+
+.aboutme-image img{
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 220px;
+    width: 200px;
+    margin-top: 0px;
+}
+
+.about-me p{
+    text-align: center;
+}
+
+.about-me a{
+    font-size: 1.2rem;
+}
+
+.aboutme-desc h2{
+    text-align: right;
+}
+
+.aboutme-desc p{
+    text-align: right;
+}
+
+.about-me::after{
+    clear: both;
+    display: table;
+    content: '';
+}
+
+
+
+/* project_exp */
+
+.project_exp{
+    padding: 1% 5%;
+    background-color: #456ef5;
+}
+
+.project_exp .card{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+.project_exp .card .skills{
+    text-align: left;
+}
+
+.card:hover{
+    box-shadow: 0 4px 8px 5px black;
+}
+
+.card-icon{
+    text-align: center;
+}
+
+.card-icon img{
+    margin-top: 20px;
+    width: 100px;
+}
+
+.rounded-img{
+    border: 5px solid white;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.card-title h2{
+    background-color: #616161;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.skills{
+    padding: 1% 5%;
+    background-color: #ffffff ;
+    
+
+}
+
+.skills-container{
+    padding-right: 45px;
+}
+
+.skills-container li{
+    list-style: none;
+    font-weight: bolder;
+    margin: 30px 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.skills-container li::before{
+   content: '';
+   position: absolute;
+   top: calc(100% + 5px);
+   left: 0;
+
+   width: 100%;
+   height: 10px;
+   background-color: rgb(86,86,153,.5);
+   border-radius: 1000px;
+}
+
+
+.skills-container li::after{
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+ 
+    width: 0;
+    height: 10px;
+    background-color: rgb(86,86,153,1);
+    border-radius: 1000px;
+
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+ }
+
+ .skills-container li.html::after{
+     animation-name: html;
+ }
+
+ @keyframes html{
+     to{
+         width: 90%;
+     }
+ }
+
+ .skills-container li.css::after{
+    animation-name: css;
+ }
+ 
+ @keyframes css{
+     to{
+         width: 80%;
+     }
+ }
+ 
+ .skills-container li.c::after{
+     animation-name: c;
+  }
+  
+  @keyframes c{
+      to{
+          width: 85%;
+      }
+  }
+ 
+ .skills-container li.js::after{
+    animation-name: js;
+ }
+ 
+ @keyframes js{
+     to{
+         width: 75%;
+     }
+ }
+ 
+ .skills-container li.cpp::after{
+     animation-name: cpp;
+  }
+  
+  @keyframes cpp{
+      to{
+          width: 80%;
+      }
+  }
+ 
+ 
+ 
+ .skills-container li.cSharp::after{
+    animation-name: cSharp;
+ }
+ 
+ @keyframes cSharp{
+     to{
+         width: 85%;
+     }
+ }
+ 
+ .skills-container li.java::after{
+     animation-name: java;
+  }
+  
+  @keyframes java{
+      to{
+          width: 75%;
+      }
+  }
+ 
+  
+
+.project-exp::after{
+   clear: both;
+   display: table;
+   content: '';
+}
+
+/* contact me */
+.contact_me{
+    padding: 1% 7%;
+    padding-right: 50px;
+    background-color: #456ef5;
+    color: white;
+}
+
+.contact{
+    text-align: center;
+}
+
+.contact input, textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+
+.contact button{
+    border: none;
+    border-radius: 12px;
+    background-color: #00550e;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px;
+    width: 150px;
+}
+
+
+.contact-links{
+    text-align:relative;
+}
+
+.media-buttons .btn{
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 5px;
+    margin: 10px;
+    width: 50px;
+    position: absolute;
+    margin-top: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+}
+.btn:hover{
+    background-color: gray;
+}
+
+.contact_me::after{
+    clear: both;
+    display: table;
+    content: '';
+ }
+
+
+
+
