@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <title>REPOPEOPLE</title>
+    <style>
+        body {background-color: rgb(255, 255, 255);}
+
+    *{
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    
+    }
+
+    .image img{
+        float: left;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+
+    .image-info{
+        margin-left: 200px;
+        margin-top: 10px;
+    }
+
+    
+    
+    </style>
+</head>
+<body>
+        <button type="button" style="background-color:  rgb(190, 190, 190); margin-left: 50px; padding: 8px;" onclick="users()" value="load"><b>Load GitHub Users</b></button> 
+
+    <div></div>
+    <div class="about" id="about-id">
+    <script>
+        
+        function users() {
+            
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                var p = JSON.parse(this.responseText);
+                var o = "";
+                
+                for(let i=0; i<10; i++){
+                    o +=
+                    
+                            '<div class="image">'+
+                                '<img src="'+p[i].avatar_url+'"width="150" height="150" >'+
+                                '<div class="image-info">'+
+                               '<ul style="list-style-type:none;" >'+
+                                '<br>'+
+                                    '<li><b>ID</b>: '+p[i].id+'</li>'+
+                                    '<li><b>Login</b>: '+p[i].login+'</li>'+
+                                    '<li><b>GitHub</b>: '+p[i].html_url+'</a></li>'+
+                                    '<li><b>Following</b>: '+p[i].following_url+'</a></li>'+
+                                    '<li><b>Follower</b>: '+p[i].followers_url+'</a></li>'+
+                                    '<li><b>Organization </b>: '+p[i].organizations_url+'</a></li>'+
+
+                                '</ul>'+
+                                '<br><br><br>'+
+                                '</div>'
+
+                            '</div>';
+                }
+                
+                document.getElementsByTagName("div")[0].innerHTML=o;
+                
+            }
+        xhttp.open("GET", "https://api.github.com/users", true);
+        xhttp.send();
+        }
+        
+    </script>
+</div>
+
+</body>
+</html>
